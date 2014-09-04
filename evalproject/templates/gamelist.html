@@ -1,0 +1,9 @@
+<%inherit file="/base.html"/>
+<%def name="heading()"><h1>Game List</h1></%def>
+<%def name="body()">
+    <ul>
+    % for game in c.games:
+        <li><a href="games/${game.id}">${game.title}</a></li>
+    % endfor
+    </ul>
+</%def>

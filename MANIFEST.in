@@ -1,0 +1,3 @@
+include evalproject/config/deployment.ini_tmpl
+recursive-include evalproject/public *
+recursive-include evalproject/templates *

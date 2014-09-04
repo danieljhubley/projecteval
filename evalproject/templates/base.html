@@ -1,0 +1,59 @@
+## -*- coding: utf-8 -*-
+<html>
+	<%self.seen_css = set()%>
+	<head>
+    	<title>${self.title()}</title>
+    	${self.head()}
+	</head>
+	<body>
+    	${self.header()}
+    	${self.nav()}
+    	${self.heading()}
+    	${next.body()}
+    	${self.footer()}
+	</body>
+</html>
+
+<%def name="title()">EVal Project</%def>
+
+<%def name="head()">
+	${self.css()}
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</%def>
+
+<%def name="header()">
+</%def>
+
+<%def name="nav()">
+	<div>
+		<header><a href="/"><span>EVal Project</span></a></header>
+		<nav>
+			<ul>
+				<li><a href="/games">Games</a></li>
+				<li><a href="/platforms">Platforms</a></li>
+			</ul>
+		</nav>
+
+		<div>
+			<!--Login will go here-->
+		</div>
+	</div>
+</%def>
+
+<%def name="heading()">
+</%def>
+
+<%def name="footer()">
+
+</%def>
+
+<%def name="css()">
+	${css_link('/static/css/eval.css', 'screen')}
+</%def>
+
+<%def name="css_link(path, media='')">
+	% if path not in self.seen_css:
+		<link rel="stylesheet" type="text/css" href="${path|h}" media="${media}"></link>
+	% endif
+</%def>

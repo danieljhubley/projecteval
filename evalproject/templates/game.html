@@ -1,0 +1,24 @@
+<%inherit file="/base.html"/>
+
+<%def name="title()">${c.game.title}</%def>
+<%def name="heading()">
+    <h1>${c.game.id} - ${c.game.title}</h1>
+</%def>
+<%def name="body()">
+    <p>
+        Description: ${c.game.desc}
+    </p>
+    <p>
+        Release Date: ${c.game.release_date.date()}
+    </p>
+    <p>
+        Developer: ${c.game.developer}
+    </p>
+    <p>
+        Publisher: ${c.game.publisher}
+    </p>
+    <p>
+        Trailer: ${c.game.trailer_url}
+    </p>
+    <a href="#" onclick="window.history.back()">Go Back</a>
+</%def>

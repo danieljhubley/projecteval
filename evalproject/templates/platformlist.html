@@ -1,0 +1,9 @@
+<%inherit file="/base.html/"/>
+<%def name="heading()"><h1>Platform List</h1></%def>
+<%def name="body()">
+    <ul>
+    % for platform in c.platforms:
+        <li><a href="platforms/${platform.id}">${platform.name}</a></li>
+    % endfor
+    </ul>
+</%def>

@@ -1,0 +1,30 @@
+<%inherit file="/base.html"/>
+
+<%def name="title()">${c.platform.name}</%def>
+<%def name="heading()">
+    <h1>${c.platform.id} - ${c.platform.name}</h1>
+</%def>
+<%def name="body()">
+    <p>
+        Description: ${c.platform.desc}
+    </p>
+    <p>
+        Release Date: ${c.platform.release_date.date()}
+    </p>
+    <p>
+        Developer: ${c.platform.developer}
+    </p>
+    <p>
+        CPU: ${c.platform.cpu}
+    </p>
+    <p>
+        Memory: ${c.platform.memory}
+    </p>
+    <p>
+        Graphics: ${c.platform.graphics}
+    </p>
+    <p>
+        Storage: ${c.platform.storage}
+    </p>
+    <a href="#" onclick="window.history.back()">Go Back</a>
+</%def>
