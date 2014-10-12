@@ -20,6 +20,7 @@
 	${self.css()}
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    ${self.innerjs()}
 </%def>
 
 <%def name="header()">
@@ -60,4 +61,7 @@
 	% if path not in self.seen_css:
 		<link rel="stylesheet" type="text/css" href="${path|h}" media="${media}"></link>
 	% endif
+</%def>
+
+<%def name="innerjs()">
 </%def>

@@ -22,6 +22,7 @@ def make_map(config):
 
     # CUSTOM ROUTES HERE
     mcon('/', controller='home', action='main')
+    mcon('/search/:query', controller='home', action='search', conditions = dict(method=['POST', 'GET']))
     mcon('/games', controller='games', action='all_games')
     mcon('/games/:id', controller='games', action='game_info')
     mcon('/platforms', controller='platforms', action='all_platforms')

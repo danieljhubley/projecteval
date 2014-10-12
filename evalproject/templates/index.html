@@ -1,5 +1,14 @@
 <%inherit file="/base.html/"/>
+<%def name="innerjs()">
+    <script type="text/javascript" src="/static/javascript/home.js"></script>
+</%def>
+
 <%def name="heading()"><h1>Main Page</h1></%def>
 <%def name="body()">
-	MAINNNNN
+    <div class="search">
+	    <input type="text" id="search-text-box" name="search-text-box" class="search-text-box" value="" />
+        <button id="search-button" class="search-button">Search</button>
+    </div>
+    <div id="results">
+    </div>
 </%def>

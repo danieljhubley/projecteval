@@ -3,10 +3,10 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 10
-_modified_time = 1409716413.318625
+_magic_number = 9
+_modified_time = 1413135932.655775
 _enable_loop = True
-_template_filename = '/home/austinvalle/EValProject/evalproject/templates/game.html'
+_template_filename = '/home/dan/eval/evalproject/templates/game.html'
 _template_uri = '/game.html/'
 _source_encoding = 'utf-8'
 from markupsafe import escape
@@ -29,8 +29,13 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         __M_writer = context.writer()
+        # SOURCE LINE 1
         __M_writer(u'\n\n')
+        # SOURCE LINE 3
         __M_writer(u'\n')
+        # SOURCE LINE 6
+        __M_writer(u'\n')
+        # SOURCE LINE 24
         __M_writer(u'\n')
         return ''
     finally:
@@ -42,17 +47,25 @@ def render_body(context):
     try:
         c = context.get('c', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 7
         __M_writer(u'\n    <p>\n        Description: ')
+        # SOURCE LINE 9
         __M_writer(escape(c.game.desc))
         __M_writer(u'\n    </p>\n    <p>\n        Release Date: ')
+        # SOURCE LINE 12
         __M_writer(escape(c.game.release_date.date()))
         __M_writer(u'\n    </p>\n    <p>\n        Developer: ')
+        # SOURCE LINE 15
         __M_writer(escape(c.game.developer))
         __M_writer(u'\n    </p>\n    <p>\n        Publisher: ')
+        # SOURCE LINE 18
         __M_writer(escape(c.game.publisher))
-        __M_writer(u'\n    </p>\n    <p>\n        Trailer: ')
+        __M_writer(u'\n    </p>\n    <p>\n        Trailer: <a href="')
+        # SOURCE LINE 21
         __M_writer(escape(c.game.trailer_url))
-        __M_writer(u'\n    </p>\n    <a href="#" onclick="window.history.back()">Go Back</a>\n')
+        __M_writer(u'">')
+        __M_writer(escape(c.game.trailer_url))
+        __M_writer(u'</a>\n    </p>\n    <a href="" onclick="window.history.go(-1); return false;">Go Back</a>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -63,7 +76,9 @@ def render_heading(context):
     try:
         c = context.get('c', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 4
         __M_writer(u'\n    <h1>')
+        # SOURCE LINE 5
         __M_writer(escape(c.game.id))
         __M_writer(u' - ')
         __M_writer(escape(c.game.title))
@@ -78,14 +93,10 @@ def render_title(context):
     try:
         c = context.get('c', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 3
         __M_writer(escape(c.game.title))
         return ''
     finally:
         context.caller_stack._pop_frame()
 
 
-"""
-__M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"27": 0, "32": 1, "33": 3, "34": 6, "40": 7, "45": 7, "46": 9, "47": 9, "48": 12, "49": 12, "50": 15, "51": 15, "52": 18, "53": 18, "54": 21, "55": 21, "61": 4, "66": 4, "67": 5, "68": 5, "69": 5, "70": 5, "76": 3, "81": 3, "87": 81}, "uri": "/game.html/", "filename": "/home/austinvalle/EValProject/evalproject/templates/game.html"}
-__M_END_METADATA
-"""

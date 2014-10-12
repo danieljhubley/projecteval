@@ -23,4 +23,7 @@ class PlatformsController(BaseController):
         c.platform = platform_q.get(int(id))
         if(c.platform is None):
             abort(404)
+        games_q = Session.query(model.Game).join(model.Gameplatform, model.Game.id == model.Gameplatform.game_id)\
+                      .filter(model.Gameplatform.platform_id == c.platform.id)
+        c.games = games_q.order_by(model.Game.title).all()
         return render('/platform.html/')
