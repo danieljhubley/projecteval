@@ -18,7 +18,7 @@
         Publisher: ${c.game.publisher}
     </p>
     <p>
-        Trailer: ${c.game.trailer_url}
+        Trailer: <a href="${c.game.trailer_url}">${c.game.trailer_url}</a>
     </p>
-    <a href="#" onclick="window.history.back()">Go Back</a>
+    <a href="" onclick="window.history.go(-1); return false;">Go Back</a>
 </%def>

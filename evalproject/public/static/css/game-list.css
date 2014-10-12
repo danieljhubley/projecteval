@@ -1,0 +1,5 @@
+/* Game List CSS */
+.game-content ul {
+	list-style: none;
+	padding: 0px;
+}

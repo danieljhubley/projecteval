@@ -1,9 +1,20 @@
 <%inherit file="/base.html"/>
+<%def name="innercss()">
+	${css_link('/static/css/game-list.css', 'screen')}
+</%def>
 <%def name="heading()"><h1>Game List</h1></%def>
-<%def name="body()">
-    <ul>
-    % for game in c.games:
-        <li><a href="games/${game.id}">${game.title}</a></li>
-    % endfor
-    </ul>
+<%def name="body()">   
+	<div class="game-content">
+	    <ul>
+	    % for game in c.games:
+		<li><a href="games/${game.id}">${game.title}</a></li>
+	    % endfor
+	    </ul>
+	</div>
+</%def>
+
+<%def name="css_link(path, media='')">
+	% if path not in self.seen_css:
+		<link rel="stylesheet" type="text/css" href="${path|h}" media="${media}"></link>
+	% endif
 </%def>
